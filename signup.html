@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign Up - Klinik Subha</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body, html {
+            height: 100%;
+            background: #f8f9fa;
+        }
+        .signup-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .signup-card {
+            background: #fff;
+            border-radius: 1.5rem;
+            box-shadow: 0 0 32px 0 rgba(60,72,88,0.10);
+            padding: 2.5rem 2rem 2rem 2rem;
+            max-width: 400px;
+            width: 100%;
+            position: relative;
+        }
+        .signup-logo {
+            position: absolute;
+            top: 1.5rem;
+            left: 2rem;
+            height: 28px;
+        }
+        .signup-title {
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-top: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        .signup-subtext {
+            font-size: 1rem;
+            color: #6c757d;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .google-btn {
+            background: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 0.5rem;
+            padding: 0.5rem 1rem;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 500;
+            margin-bottom: 1.25rem;
+            transition: box-shadow 0.2s;
+        }
+        .google-btn:hover {
+            box-shadow: 0 2px 8px rgba(60,72,88,0.10);
+        }
+        .google-icon {
+            height: 20px;
+            margin-right: 0.75rem;
+        }
+        .form-label {
+            font-weight: 500;
+        }
+        .signup-btn {
+            background: #222;
+            color: #fff;
+            border: none;
+            border-radius: 0.5rem;
+            width: 100%;
+            padding: 0.5rem 0;
+            font-weight: 500;
+            margin-top: 0.5rem;
+        }
+        .signup-btn:hover {
+            background: #000;
+        }
+        .signup-link {
+            color: #222;
+            text-decoration: underline;
+        }
+        .signup-footer {
+            font-size: 0.9rem;
+            color: #888;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .signup-footer a {
+            color: #222;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-wrapper">
+        <div class="signup-card">
+            <img src="img/services/services/logo.png" alt="Logo" class="signup-logo">
+            <div class="signup-title">Create your account</div>
+            <div class="signup-subtext">Sign up to access Klinik Subha's admin features</div>
+            <button class="google-btn mb-3">
+                <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" class="google-icon">
+                Sign up with Google
+            </button>
+            <form id="signupForm">
+                <div class="mb-3">
+                    <label for="fullname" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="fullname" placeholder="Your full name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Type your email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Password" required>
+                    <div class="form-text text-muted" style="font-size: 0.95rem;">
+                        Password must be at least 7 characters, contain at least one uppercase letter, and one symbol.
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="confirmPassword" class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm password" required>
+                </div>
+                <button type="submit" class="signup-btn">Sign up</button>
+            </form>
+            <div class="text-center mt-3" style="font-size: 1rem;">
+                Already have an account? <a href="login.html" class="signup-link">Log in</a>
+            </div>
+            <div id="signupError" class="text-danger mt-2" style="display:none;"></div>
+            <div class="signup-footer">
+                By clicking "Sign up with Google" or "Sign up"<br>
+                you agree to our <a href="#">Terms of Use</a> and <a href="#">Privacy policy</a>.
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const errorDiv = document.getElementById('signupError');
+            errorDiv.style.display = 'none';
+            errorDiv.textContent = '';
+
+            // Password requirements: at least 1 uppercase, 1 symbol, min 7 chars
+            const uppercase = /[A-Z]/;
+            const symbol = /[^A-Za-z0-9]/;
+            if (password.length < 7) {
+                errorDiv.textContent = 'Password must be at least 7 characters.';
+                errorDiv.style.display = 'block';
+                return;
+            }
+            if (!uppercase.test(password)) {
+                errorDiv.textContent = 'Password must contain at least one uppercase letter.';
+                errorDiv.style.display = 'block';
+                return;
+            }
+            if (!symbol.test(password)) {
+                errorDiv.textContent = 'Password must contain at least one symbol.';
+                errorDiv.style.display = 'block';
+                return;
+            }
+            if (password !== confirmPassword) {
+                errorDiv.textContent = 'Passwords do not match.';
+                errorDiv.style.display = 'block';
+                return;
+            }
+
+            // If all checks pass, you can proceed with Supabase signup here
+            // For now, just show a success alert
+            alert('Sign up successful! (Validation passed)');
+        });
+    </script>
+</body>
+</html> 

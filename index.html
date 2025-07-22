@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Klinik Subha</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.theme.default.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Preload Carousel Images -->
+    <link rel="preload" href="img/services/services/service1.jpg" as="image">
+    <link rel="preload" href="img/services/services/service2.jpg" as="image">
+    <link rel="preload" href="img/services/services/service3.jpg" as="image">
+    <link rel="preload" href="img/services/services/service4.jpg" as="image">
+
+    <style>
+        :root {
+            --primary: #1C6839;    /* New green color */
+            --primary-light: #2a8c52;  /* Lighter shade of the new green */
+            --primary-dark: #154e2b;   /* Darker shade of the new green */
+        }
+
+        .bg-primary {
+            background-color: var(--primary) !important;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+
+        .text-primary {
+            color: var(--primary) !important;
+        }
+
+        .border-primary {
+            border-color: var(--primary) !important;
+        }
+
+        .video-container {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .btn-play {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--primary);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-play span {
+            border-left: 15px solid white;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            margin-left: 5px;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 65px;
+            height: 65px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 35px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 100;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .whatsapp-float::after {
+            content: "Chat with us now!";
+            position: absolute;
+            right: 80px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: white;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .whatsapp-float::before {
+            content: "";
+            position: absolute;
+            right: 70px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 8px solid transparent;
+            border-left-color: white;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            filter: drop-shadow(2px 0 2px rgba(0, 0, 0, 0.05));
+        }
+
+        .whatsapp-float:hover::after,
+        .whatsapp-float:hover::before {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .whatsapp-float:hover::after {
+            transform: translateY(-50%) translateX(-10px);
+        }
+
+        .whatsapp-float:hover {
+            background-color: #128C7E;
+            color: #FFF;
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .whatsapp-float .pulse {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: #25d366;
+            opacity: 0.7;
+            animation: pulse 2s infinite;
+            z-index: -1;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.7;
+            }
+            70% {
+                transform: scale(1.3);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1.3);
+                opacity: 0;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 30px;
+            }
+
+            .whatsapp-float::after {
+                right: 70px;
+                font-size: 12px;
+                padding: 6px 12px;
+            }
+
+            .whatsapp-float::before {
+                right: 60px;
+            }
+        }
+
+        /* Custom cursor styles */
+        .custom-cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #1C6839;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.2s ease;
+            transform: translate(-50%, -50%);
+        }
+
+        .custom-cursor-dot {
+            width: 6px;
+            height: 6px;
+            background: #1C6839;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform 0.1s ease;
+            transform: translate(-50%, -50%);
+        }
+
+        /* Hide cursor on interactive elements */
+        a, button, input, textarea {
+            cursor: none;
+        }
+
+        /* Service Carousel Styles */
+        .service-carousel .owl-stage-outer {
+            padding: 20px 0;
+        }
+
+        .service-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .service-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(28, 104, 57, 0.9), transparent);
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .service-item:hover .service-overlay {
+            background: linear-gradient(to top, rgba(28, 104, 57, 1), rgba(28, 104, 57, 0.8));
+        }
+
+        #service-prev, #service-next {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        #service-prev:hover, #service-next:hover {
+            background: var(--primary-dark);
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-light p-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-7 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center py-1 me-4">
+                    <small class="fa fa-map-marker-alt text-primary me-2" style="font-size: 0.75rem;"></small>
+                    <small style="font-size: 0.75rem;">BEAUFORT SQUARE, 89800 BEAUFORT, SABAH</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center py-1">
+                    <small class="far fa-clock text-primary me-2" style="font-size: 0.75rem;"></small>
+                    <small style="font-size: 0.75rem;"> EVERYDAY : 8.00 AM - 09.00 PM</small>
+                </div>
+            </div>
+            <div class="col-lg-5 px-5 text-end">
+                <div class="h-100 d-inline-flex align-items-center py-1 me-4">
+                    <small class="fa fa-phone-alt text-primary me-2" style="font-size: 0.75rem;"></small>
+                    <small style="font-size: 0.75rem;">+016-2235212</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center py-1">
+                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-1" style="width: 24px; height: 24px; line-height: 24px; font-size: 0.75rem;" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-1" style="width: 24px; height: 24px; line-height: 24px; font-size: 0.75rem;" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-1" style="width: 24px; height: 24px; line-height: 24px; font-size: 0.75rem;" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-0" style="width: 24px; height: 24px; line-height: 24px; font-size: 0.75rem;" href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Header Start -->
+    <div class="container-fluid header p-0 mb-5">
+        <div class="position-relative">
+            <video autoplay muted loop playsinline class="w-100" style="height: 100vh; object-fit: cover;" id="bgVideo">
+                <source src="video/kl.mp4" type="video/mp4">
+                <img src="img/carousel-1.jpg" alt="Fallback image" class="w-100" style="height: 100vh; object-fit: cover;">
+            </video>
+            <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 20%, rgba(28, 104, 57, 0.9) 100%);">
+                <!-- Navbar Start -->
+                <nav class="navbar navbar-expand-lg navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s">
+                    <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5" style="padding-top: 15px; padding-bottom: 15px;">
+                        <img src="img/services/services/logo.png" alt="" style="height: 70px;">
+                    </a>
+                    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="navbar-nav ms-auto p-4 p-lg-0">
+                            <a href="index.html" class="nav-item nav-link active text-white" data-translate="nav-home">Home</a>
+                            <a href="about.html" class="nav-item nav-link text-white" data-translate="nav-about">About</a>
+                            <a href="service.html" class="nav-item nav-link text-white" data-translate="nav-service">Service</a>
+                            <a href="login.html" class="nav-item nav-link text-white">Login / Sign Up</a>
+                            <!-- Language Toggle Button -->
+                            <button id="languageToggle" class="btn btn-light ms-3" onclick="setLanguage(this.textContent.toLowerCase() === 'en' ? 'ms' : 'en')" style="min-width: 60px;">
+                                EN
+                            </button>
+                        </div>
+                    </div>
+                </nav>
+                <!-- Navbar End -->
+                 
+                
+                <div class="container text-center" style="margin-top: 25vh;">
+                    <p class="d-inline-block border rounded-pill text-white py-2 px-4 mb-4 animated slideInDown" 
+                       style="font-size: 0.9rem; background-color: rgba(28, 104, 57, 1); border-color: rgba(28, 104, 57, 1) !important;"
+                       data-translate="hero-welcome">
+                        WELCOME TO KLINIK SUBHA
+                    </p>
+                    <h1 class="display-3 text-white mb-4 animated slideInDown" style="font-size: 2.8rem;" data-translate="hero-title">Comprehensive Care. Affordable Excellence.</h1>
+                    <p class="text-white mb-4 animated slideInDown" style="font-size: 0.9rem;" data-translate="hero-subtitle">Trusted Since 1990</p>
+                    
+                    <p class="text-white mb-4 animated slideInDown" style="font-size: 1rem; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.6;" data-translate="hero-description">
+                        Providing affordable, high-quality healthcare services, including general practice, pain management, physiotherapy, and diagnostic screenings. Trusted by families and corporate clients, Klinik Subha offers compassionate, patient-centered care in a modern and welcoming environment.
+                    </p>
+
+                    <div class="d-inline-flex gap-3">
+                        <a href="#book-section" class="btn btn-primary py-3 px-5 animated slideInRight" style="font-size: 1.1rem;" data-translate="hero-book-now">Book Now</a>
+                        <a href="services.html" class="btn py-3 px-5 animated slideInRight" 
+                           style="background-color: #FFFFFF; color: #1C6839; font-size: 1.1rem; border: 2px solid #FFFFFF;" data-translate="hero-services">Services</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Header End -->
+
+
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Left Text Content -->
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <p class="d-inline-block border rounded-pill py-1 px-4" style="background-color: rgba(28, 104, 57, 0.1); color: var(--primary);">ABOUT KLINIK SUBHA</p>
+                    <h1 class="mb-4">Redefining Healthcare Excellence.</h1>
+                    <p class="mb-4">Klinik Subha, established in 1990 and operating under Jash Pillay Medresources Sdn Bhd since 2018, is a trusted healthcare provider in Beaufort, Sabah. Renowned for comprehensive medical services and specialized physiotherapy care, we offer a wide range of treatments, including general practice, pain management, and diagnostic services.</p>
+                    <p class="mb-4">With a team of three experienced medical officers and one physiotherapist, we are committed to delivering high-quality, holistic, and affordable care to our patients. Our modern, well-equipped facility features advanced diagnostic tools like ultrasound, X-ray, ECG, and blood count machines, ensuring precise and efficient care.</p>
+                    <p class="mb-4">Conveniently located at Beaufort Square and open daily from 8:00 AM to 9:00 PM, Klinik Subha strives to make healthcare accessible to everyone, setting new standards in patient-centered care.</p>
+                    <ul class="list-unstyled">
+                        <li class="d-flex align-items-center mb-3">
+                            <i class="fa fa-check-circle text-primary me-3"></i>
+                            <span>Comprehensive Medical Services</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-3">
+                            <i class="fa fa-check-circle text-primary me-3"></i>
+                            <span>Advanced Diagnostic Equipment</span>
+                        </li>
+                        <li class="d-flex align-items-center mb-3">
+                            <i class="fa fa-check-circle text-primary me-3"></i>
+                            <span>Experienced Healthcare Team</span>
+                        </li>
+                    </ul>
+                    <a class="btn btn-primary rounded-pill py-3 px-5 mt-3" href="about.html">READ MORE ABOUT US</a>
+                </div>
+                <!-- Right Video Content -->
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="position-relative rounded overflow-hidden h-100" style="min-height: 400px;">
+                        <div class="position-relative video-container h-100">
+                            <img class="position-absolute w-100 h-100" src="img/about.jpg" alt="" style="object-fit: cover;">
+                            <button type="button" class="btn btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/YOUR_VIDEO_ID" data-bs-target="#videoModal">
+                                <span></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content rounded-0">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- 16:9 aspect ratio -->
+                    <div class="ratio ratio-16x9">
+                        <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always" allow="autoplay"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Our Services</p>
+                <h1>Comprehensive Healthcare Solutions</h1>
+                <p class="text-muted">Discover our wide range of medical services designed to meet all your healthcare needs</p>
+            </div>
+            
+            <!-- Service Carousel -->
+            <div class="d-flex align-items-center justify-content-center" style="gap: 10px;">
+                <button id="service-prev" class="btn btn-outline-primary"><i class="bi bi-arrow-left"></i></button>
+                <div style="flex: 1 1 0; min-width: 0;">
+                    <div class="owl-carousel service-carousel wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="service-item">
+                            <img src="img/services/services/service1.jpg" alt="Service 1" class="img-fluid rounded">
+                            <div class="service-overlay p-4">
+                                <h4 class="text-white mb-2">General Consultation</h4>
+                                <p class="text-white mb-0">Comprehensive medical check-ups and consultations</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <img src="img/services/services/service2.jpg" alt="Service 2" class="img-fluid rounded">
+                            <div class="service-overlay p-4">
+                                <h4 class="text-white mb-2">Vaccination Services</h4>
+                                <p class="text-white mb-0">Preventive immunization for all ages</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <img src="img/services/services/service3.jpg" alt="Service 3" class="img-fluid rounded">
+                            <div class="service-overlay p-4">
+                                <h4 class="text-white mb-2">Health Screening</h4>
+                                <p class="text-white mb-0">Comprehensive health assessments</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <img src="img/services/services/service4.jpg" alt="Service 4" class="img-fluid rounded">
+                            <div class="service-overlay p-4">
+                                <h4 class="text-white mb-2">Physiotherapy</h4>
+                                <p class="text-white mb-0">Professional physical rehabilitation</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <img src="img/services/services/service5.jpg" alt="Service 5" class="img-fluid rounded">
+                            <div class="service-overlay p-4">
+                                <h4 class="text-white mb-2">Laboratory Services</h4>
+                                <p class="text-white mb-0">Comprehensive diagnostic testing</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <img src="img/services/services/service6.jpg" alt="Service 6" class="img-fluid rounded">
+                            <div class="service-overlay p-4">
+                                <h4 class="text-white mb-2">X-Ray Services</h4>
+                                <p class="text-white mb-0">Advanced imaging diagnostics</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <img src="img/services/services/service7.jpg" alt="Service 7" class="img-fluid rounded">
+                            <div class="service-overlay p-4">
+                                <h4 class="text-white mb-2">Ultrasound</h4>
+                                <p class="text-white mb-0">Non-invasive diagnostic imaging</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <img src="img/services/services/service8.jpg" alt="Service 8" class="img-fluid rounded">
+                            <div class="service-overlay p-4">
+                                <h4 class="text-white mb-2">ECG</h4>
+                                <p class="text-white mb-0">Heart monitoring and diagnosis</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <img src="img/services/services/service9.jpg" alt="Service 9" class="img-fluid rounded">
+                            <div class="service-overlay p-4">
+                                <h4 class="text-white mb-2">Minor Surgery</h4>
+                                <p class="text-white mb-0">Professional surgical procedures</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <img src="img/services/services/service10.jpg" alt="Service 10" class="img-fluid rounded">
+                            <div class="service-overlay p-4">
+                                <h4 class="text-white mb-2">Wound Care</h4>
+                                <p class="text-white mb-0">Professional wound treatment</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <img src="img/services/services/service11.jpg" alt="Service 11" class="img-fluid rounded">
+                            <div class="service-overlay p-4">
+                                <h4 class="text-white mb-2">Chronic Disease Management</h4>
+                                <p class="text-white mb-0">Long-term health care support</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <img src="img/services/services/service12.jpg" alt="Service 12" class="img-fluid rounded">
+                            <div class="service-overlay p-4">
+                                <h4 class="text-white mb-2">Women's Health</h4>
+                                <p class="text-white mb-0">Specialized care for women</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <img src="img/services/services/service13.jpg" alt="Service 13" class="img-fluid rounded">
+                            <div class="service-overlay p-4">
+                                <h4 class="text-white mb-2">Child Health</h4>
+                                <p class="text-white mb-0">Pediatric care services</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <img src="img/services/services/service14.jpg" alt="Service 14" class="img-fluid rounded">
+                            <div class="service-overlay p-4">
+                                <h4 class="text-white mb-2">Elderly Care</h4>
+                                <p class="text-white mb-0">Specialized geriatric services</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <img src="img/services/services/service15.jpg" alt="Service 15" class="img-fluid rounded">
+                            <div class="service-overlay p-4">
+                                <h4 class="text-white mb-2">Mental Health</h4>
+                                <p class="text-white mb-0">Psychological support services</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <img src="img/services/services/service16.jpg" alt="Service 16" class="img-fluid rounded">
+                            <div class="service-overlay p-4">
+                                <h4 class="text-white mb-2">Nutrition Counseling</h4>
+                                <p class="text-white mb-0">Dietary advice and planning</p>
+                            </div>
+                        </div>
+                        <div class="service-item">
+                            <img src="img/services/services/service17.jpg" alt="Service 17" class="img-fluid rounded">
+                            <div class="service-overlay p-4">
+                                <h4 class="text-white mb-2">Corporate Health</h4>
+                                <p class="text-white mb-0">Business health solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button id="service-next" class="btn btn-outline-primary"><i class="bi bi-arrow-right"></i></button>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+    <!-- Feature Start -->
+    <div class="container-fluid bg-primary overflow-hidden my-5 px-lg-0">
+        <div class="container feature px-lg-0">
+            <div class="row g-0 mx-lg-0">
+                <div class="col-lg-6 feature-text py-5 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="p-lg-5 ps-lg-0">
+                        <p class="d-inline-block border rounded-pill text-light py-1 px-4">Features</p>
+                        <h1 class="text-white mb-4">Why Choose Us</h1>
+                        <p class="text-white mb-4 pb-2">At Klinik Subha, we provide affordable, high-quality, family-centered care delivered by skilled medical officers and physiotherapists. Equipped with advanced diagnostic tools, our clinic ensures precise, efficient care. Conveniently located at Beaufort Square and open daily, we are committed to making healthcare accessible for everyone. Your family's health is our priority.</p>
+                        <div class="row g-4">
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
+                                        <i class="fa fa-user-md text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="text-white mb-2">Experience</p>
+                                        <h5 class="text-white mb-0">Doctors</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
+                                        <i class="fa fa-check text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="text-white mb-2">Quality</p>
+                                        <h5 class="text-white mb-0">Services</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
+                                        <i class="fa fa-comment-medical text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="text-white mb-2">Positive</p>
+                                        <h5 class="text-white mb-0">Consultation</h5>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-light" style="width: 55px; height: 55px;">
+                                        <i class="fa fa-headphones text-primary"></i>
+                                    </div>
+                                    <div class="ms-4">
+                                        <p class="text-white mb-2">24 Hours</p>
+                                        <h5 class="text-white mb-0">Support</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 pe-lg-0 wow fadeIn" data-wow-delay="0.5s" style="min-height: 400px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute img-fluid w-100 h-100" src="img/services/services/group.jpg" style="object-fit: cover;" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Feature End -->
+
+    <!-- Testimonial Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Testimonial</p>
+                <h1>What Our Patients Say</h1>
+            </div>
+            
+            <!-- Google Reviews Widget -->
+            <div class="row justify-content-center">
+                <div class="col-lg-10 wow fadeInUp" data-wow-delay="0.3s">
+                    <!-- Embedded Google Reviews Widget (Elfsight) -->
+                    <div class="google-reviews-container mb-4" style="min-height: 200px;"> 
+                        <div id="google-reviews">
+                            <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+                            <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+                            <div class="elfsight-app-d97b0a54-41c6-4c86-ab01-b8f6c71d9f03" data-elfsight-app-lazy></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Write a Review Button -->
+                    <div class="text-center mt-4">
+                        <a href="https://search.google.com/local/writereview?placeid=ChIJOSum2cXNPDIR7ehuvVzEY2U" target="_blank" class="btn btn-primary py-3 px-5">
+                            <i class="fab fa-google me-2"></i>Write a Google Review
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+    <!-- Team Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Doctors</p>
+                <h1>Our Experience Doctors</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/services/services/1.jpg" alt="Dr. Jason Jimmy Lee Pillay">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Dr. Jason Jimmy Lee Pillay </h5>
+                            <p class="text-primary">Department</p>
+                            <div class="team-social text-center">
+                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/services/services/2.jpg" alt="Dr. Sharlinna John">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Dr. Sharlinna John </h5>
+                            <p class="text-primary">Department</p>
+                            <div class="team-social text-center">
+                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="team-item position-relative rounded overflow-hidden">
+                        <div class="overflow-hidden">
+                            <img class="img-fluid" src="img/services/services/3.jpg" alt="Dr. Nurul Hidayu Hanuar">
+                        </div>
+                        <div class="team-text bg-light text-center p-4">
+                            <h5>Dr. Nurul Hidayu Hanuar</h5>
+                            <p class="text-primary">Department</p>
+                            <div class="team-social text-center">
+                                <a class="btn btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-square" href=""><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+
+    <!-- Appointment Start -->
+    <div class="container-xxl py-5" id="book-section">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <p class="d-inline-block border rounded-pill py-1 px-4">Appointment</p>
+                    <h1 class="mb-4">Make An Appointment To Visit Our Doctor</h1>
+                    <p class="mb-4"></p>
+                    <div class="bg-light rounded d-flex align-items-center p-5 mb-4">
+                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style="width: 55px; height: 55px;">
+                            <i class="fa fa-phone-alt text-primary"></i>
+                        </div>
+                        <div class="ms-4">
+                            <p class="mb-2">Call Us Now</p>
+                            <h5 class="mb-0">+012 345 6789</h5>
+                        </div>
+                    </div>
+                    <div class="bg-light rounded d-flex align-items-center p-5">
+                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style="width: 55px; height: 55px;">
+                            <i class="fa fa-envelope-open text-primary"></i>
+                        </div>
+                        <div class="ms-4">
+                            <p class="mb-2">Mail Us Now</p>
+                            <h5 class="mb-0">admin@kliniksubha.com</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="bg-light rounded h-100 d-flex align-items-center p-5">
+                        <form id="appointmentForm">
+                            <div class="row g-3">
+                                <!-- 1. Service type selection -->
+                                <div class="col-12">
+                                    <label for="serviceType" class="form-label">Service Type</label>
+                                    <select id="serviceType" name="serviceType" class="form-select border-0" style="height: 55px;" required>
+                                        <option value="" disabled selected>Select Service</option>
+                                        <option value="general">General Consultation</option>
+                                        <option value="vaccination">Vaccination</option>
+                                        <option value="screening">Health Screening</option>
+                                        <option value="physiotherapy">Physiotherapy</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <!-- 2. Preferred date and time (optional) -->
+                                <div class="col-12 col-sm-6">
+                                    <label for="preferredDate" class="form-label">Preferred Date (optional)</label>
+                                    <input type="date" id="preferredDate" name="preferredDate" class="form-control border-0" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <label for="preferredTime" class="form-label">Preferred Time (optional)</label>
+                                    <input type="time" id="preferredTime" name="preferredTime" class="form-control border-0" style="height: 55px;">
+                                </div>
+                                <!-- 3. Patient details -->
+                                <div class="col-12 col-sm-6">
+                                    <label for="patientName" class="form-label">Name</label>
+                                    <input type="text" id="patientName" name="patientName" class="form-control border-0" placeholder="Your Name" style="height: 55px;" required>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <label for="patientPhone" class="form-label">Phone Number</label>
+                                    <input type="tel" id="patientPhone" name="patientPhone" class="form-control border-0" placeholder="Your Phone Number" style="height: 55px;" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="patientIC" class="form-label">Identification Number (IC) </label>
+                                    <input type="text" id="patientIC" name="patientIC" class="form-control border-0" placeholder="IC Number or Email" style="height: 55px;" required>
+                                </div>
+                                <!-- 4. Additional notes -->
+                                <div class="col-12">
+                                    <label for="additionalNotes" class="form-label">Additional Notes (e.g. symptoms, preferred doctor)</label>
+                                    <textarea id="additionalNotes" name="additionalNotes" class="form-control border-0" rows="3" placeholder="Describe your symptoms or preferred doctor"></textarea>
+                                </div>
+                                <!-- 5. Confirmation method -->
+                                <div class="col-12">
+                                    <div class="alert alert-info mt-2" role="alert">
+                                        We'll contact you within 24 hours to confirm your request.
+                                    </div>
+                                </div>
+                                <!-- 6. Terms notice -->
+                                <div class="col-12">
+                                    <div class="form-text mb-2">
+                                        <strong>Note:</strong> Walk-ins will be prioritized. This is a request, not a fixed appointment.
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary w-100 py-3">Submit Booking Request</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Appointment End -->
+
+
+    <!-- Footer Start -->
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <!-- Custom Javascript -->
+    <script src="js/main.js"></script>
+    <script src="js/carousel.js"></script>
+    <script type="module" src="js/supabase.js"></script>
+    <script type="module" src="js/appointment.js"></script>
+
+    <!-- Add this just before the closing </body> tag -->
+    <script>
+        // Debug logging
+        console.log('Page loaded');
+        window.addEventListener('error', function(e) {
+            console.error('Global error:', e.error);
+        });
+    </script>
+
+    <!-- Add this just before the closing </body> tag -->
+    <a href="https://wa.me/60162235212?text=Hi%20Klinik%20Subha!" 
+       class="whatsapp-float" 
+       target="_blank"
+       aria-label="Chat with us on WhatsApp">
+        <div class="pulse"></div>
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Add these elements just after the body tag -->
+    <div class="custom-cursor"></div>
+    <div class="custom-cursor-dot"></div>
+
+    <!-- Add this JavaScript before closing body tag -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cursor = document.querySelector('.custom-cursor');
+            const cursorDot = document.querySelector('.custom-cursor-dot');
+
+            document.addEventListener('mousemove', function(e) {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+                
+                cursorDot.style.left = e.clientX + 'px';
+                cursorDot.style.top = e.clientY + 'px';
+            });
+
+            // Scale up on clickable elements
+            document.querySelectorAll('a, button, input, textarea').forEach(elem => {
+                elem.addEventListener('mouseenter', () => {
+                    cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
+                    cursorDot.style.transform = 'translate(-50%, -50%) scale(1.5)';
+                });
+                
+                elem.addEventListener('mouseleave', () => {
+                    cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+                    cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
+                });
+            });
+        });
+    </script>
+
+    <!-- Add this before closing body tag -->
+    <script src="js/translations.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script src="js/auth.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // Initialize Service Carousel
+            var $serviceCarousel = $('.service-carousel').owlCarousel({
+                loop: true,
+                margin: 20,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                nav: false,
+                dots: false,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    576: {
+                        items: 2
+                    },
+                    768: {
+                        items: 3
+                    },
+                    992: {
+                        items: 4
+                    }
+                }
+            });
+
+            // Custom navigation buttons
+            $('#service-prev').click(function() {
+                $serviceCarousel.trigger('prev.owl.carousel');
+            });
+            $('#service-next').click(function() {
+                $serviceCarousel.trigger('next.owl.carousel');
+            });
+
+            // Smooth scroll for Book Now button
+            $('a[href="#book-section"]').on('click', function(e) {
+                e.preventDefault();
+                const target = document.getElementById('book-section');
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+
+            // Prevent booking for past dates in appointment form
+            const dateInput = document.getElementById('preferredDate');
+            if (dateInput) {
+                // Set min attribute to today
+                const today = new Date();
+                const todayStr = today.toISOString().split('T')[0];
+                dateInput.setAttribute('min', todayStr);
+                
+                // Initial validation when page loads
+                if (dateInput.value) {
+                    const selectedDate = new Date(dateInput.value);
+                    today.setHours(0,0,0,0);
+                    if (selectedDate < today) {
+                        alert('You cannot book an appointment for a past date.');
+                        dateInput.value = todayStr; // Reset to today
+                    }
+                }
+                
+                // Validation when date changes
+                dateInput.addEventListener('change', function() {
+                    const selectedDate = new Date(this.value);
+                    const today = new Date();
+                    today.setHours(0,0,0,0);
+                    if (selectedDate < today) {
+                        alert('You cannot book an appointment for a past date.');
+                        this.value = ''; // Clear the field
+                    }
+                });
+                
+                // Also validate on input to catch direct typing
+                dateInput.addEventListener('input', function() {
+                    if (this.value) {
+                        const selectedDate = new Date(this.value);
+                        const today = new Date();
+                        today.setHours(0,0,0,0);
+                        if (selectedDate < today) {
+                            alert('You cannot book an appointment for a past date.');
+                            this.value = ''; // Clear the field
+                        }
+                    }
+                });
+            }
+            
+            // Prevent form submission if date is before today
+            const appointmentForm = document.getElementById('appointmentForm');
+            if (appointmentForm && dateInput) {
+                appointmentForm.addEventListener('submit', function(e) {
+                    if (dateInput.value) {
+                        const selectedDate = new Date(dateInput.value);
+                        const today = new Date();
+                        today.setHours(0,0,0,0);
+                        if (selectedDate < today) {
+                            e.preventDefault();
+                            alert('You cannot book an appointment for a past date.');
+                            dateInput.value = ''; // Clear the field
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

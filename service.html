@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Klinik - Clinic Website Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #1C6839;    /* New green color */
+            --primary-light: #2a8c52;  /* Lighter shade */
+            --primary-dark: #154e2b;   /* Darker shade */
+        }
+
+        .bg-primary {
+            background-color: var(--primary) !important;
+        }
+
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+
+        .text-primary {
+            color: var(--primary) !important;
+        }
+
+        .border-primary {
+            border-color: var(--primary) !important;
+        }
+
+        /* For any gradient backgrounds */
+        .bg-primary-gradient {
+            background: linear-gradient(to bottom, rgba(28, 104, 57, 0.9), rgba(28, 104, 57, 0.6)) !important;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-light p-0 wow fadeIn" data-wow-delay="0.1s">
+        <div class="row gx-0 d-none d-lg-flex">
+            <div class="col-lg-7 px-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-map-marker-alt text-primary me-2"></small>
+                    <small>123 Street, New York, USA</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center py-3">
+                    <small class="far fa-clock text-primary me-2"></small>
+                    <small>Mon - Fri : 09.00 AM - 09.00 PM</small>
+                </div>
+            </div>
+            <div class="col-lg-5 px-5 text-end">
+                <div class="h-100 d-inline-flex align-items-center py-3 me-4">
+                    <small class="fa fa-phone-alt text-primary me-2"></small>
+                    <small>+012 345 6789</small>
+                </div>
+                <div class="h-100 d-inline-flex align-items-center">
+                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href=""><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-1" href=""><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-sm-square rounded-circle bg-white text-primary me-0" href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top p-0 wow fadeIn" data-wow-delay="0.1s">
+        <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5" style="padding-top: 15px; padding-bottom: 15px;">
+        </a>
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="index.html" class="nav-item nav-link">Home</a>
+                <a href="about.html" class="nav-item nav-link">About</a>
+                <a href="service.html" class="nav-item nav-link active">Service</a>
+            </div>
+            <a href="" class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Appointment<i class="fa fa-arrow-right ms-3"></i></a>
+        </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s" style="background: url('img/services/services/group.jpg') center center/cover no-repeat;">
+        <div class="container py-5">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Services</h1>
+            <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb text-uppercase mb-0">
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
+                    <li class="breadcrumb-item text-primary active" aria-current="page">Services</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Our Services</p>
+                <h1>Comprehensive Healthcare Solutions</h1>
+                <p class="text-muted">Discover our wide range of medical services designed to meet all your healthcare needs</p>
+            </div>
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="img/services/services/service1.jpg" class="card-img-top" alt="General Consultation">
+                        <div class="card-body">
+                            <h5 class="card-title">General Consultation</h5>
+                            <p class="card-text">Comprehensive medical check-ups and consultations for all ages.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.15s">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="img/services/services/service2.jpg" class="card-img-top" alt="Vaccination Services">
+                        <div class="card-body">
+                            <h5 class="card-title">Vaccination Services</h5>
+                            <p class="card-text">Preventive immunization for children, adults, and travelers.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="img/services/services/service3.jpg" class="card-img-top" alt="Health Screening">
+                        <div class="card-body">
+                            <h5 class="card-title">Health Screening</h5>
+                            <p class="card-text">Comprehensive health assessments and early detection programs.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 4 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.25s">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="img/services/services/service4.jpg" class="card-img-top" alt="Physiotherapy">
+                        <div class="card-body">
+                            <h5 class="card-title">Physiotherapy</h5>
+                            <p class="card-text">Professional physical rehabilitation and pain management.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 5 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="img/services/services/service5.jpg" class="card-img-top" alt="Laboratory Services">
+                        <div class="card-body">
+                            <h5 class="card-title">Laboratory Services</h5>
+                            <p class="card-text">Comprehensive diagnostic testing and blood analysis.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 6 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.35s">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="img/services/services/service6.jpg" class="card-img-top" alt="X-Ray Services">
+                        <div class="card-body">
+                            <h5 class="card-title">X-Ray Services</h5>
+                            <p class="card-text">Advanced imaging diagnostics for accurate assessment.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 7 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.4s">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="img/services/services/service7.jpg" class="card-img-top" alt="Ultrasound">
+                        <div class="card-body">
+                            <h5 class="card-title">Ultrasound</h5>
+                            <p class="card-text">Non-invasive diagnostic imaging for various conditions.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 8 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.45s">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="img/services/services/service8.jpg" class="card-img-top" alt="ECG">
+                        <div class="card-body">
+                            <h5 class="card-title">ECG</h5>
+                            <p class="card-text">Heart monitoring and diagnosis for cardiac health.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 9 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="img/services/services/service9.jpg" class="card-img-top" alt="Minor Surgery">
+                        <div class="card-body">
+                            <h5 class="card-title">Minor Surgery</h5>
+                            <p class="card-text">Professional minor surgical procedures and wound care.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 10 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.55s">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="img/services/services/service10.jpg" class="card-img-top" alt="Wound Care">
+                        <div class="card-body">
+                            <h5 class="card-title">Wound Care</h5>
+                            <p class="card-text">Professional wound treatment and follow-up care.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 11 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.6s">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="img/services/services/service11.jpg" class="card-img-top" alt="Chronic Disease Management">
+                        <div class="card-body">
+                            <h5 class="card-title">Chronic Disease Management</h5>
+                            <p class="card-text">Long-term care and support for chronic conditions.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 12 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.65s">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="img/services/services/service12.jpg" class="card-img-top" alt="Women's Health">
+                        <div class="card-body">
+                            <h5 class="card-title">Women's Health</h5>
+                            <p class="card-text">Specialized care and screenings for women's health.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 13 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="img/services/services/service13.jpg" class="card-img-top" alt="Child Health">
+                        <div class="card-body">
+                            <h5 class="card-title">Child Health</h5>
+                            <p class="card-text">Pediatric care and immunization for children.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 14 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.75s">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="img/services/services/service14.jpg" class="card-img-top" alt="Elderly Care">
+                        <div class="card-body">
+                            <h5 class="card-title">Elderly Care</h5>
+                            <p class="card-text">Specialized geriatric services and support for seniors.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 15 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.8s">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="img/services/services/service15.jpg" class="card-img-top" alt="Mental Health">
+                        <div class="card-body">
+                            <h5 class="card-title">Mental Health</h5>
+                            <p class="card-text">Psychological support and mental health services.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 16 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.85s">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="img/services/services/service16.jpg" class="card-img-top" alt="Nutrition Counseling">
+                        <div class="card-body">
+                            <h5 class="card-title">Nutrition Counseling</h5>
+                            <p class="card-text">Dietary advice and personalized nutrition planning.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 17 -->
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.9s">
+                    <div class="card h-100 shadow-sm border-0">
+                        <img src="img/services/services/service17.jpg" class="card-img-top" alt="Corporate Health">
+                        <div class="card-body">
+                            <h5 class="card-title">Corporate Health</h5>
+                            <p class="card-text">Business health solutions and workplace wellness programs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+    <!-- Testimonial Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="d-inline-block border rounded-pill py-1 px-4">Testimonial</p>
+                <h1>What Our Patients Say</h1>
+            </div>
+            
+            <!-- Google Reviews Widget -->
+            <div class="row justify-content-center">
+                <div class="col-lg-10 wow fadeInUp" data-wow-delay="0.3s">
+                    <!-- Embedded Google Reviews Widget (Elfsight) -->
+                    <div class="google-reviews-container mb-4" style="min-height: 200px;"> 
+                        <div id="google-reviews">
+                            <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+                            <script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
+                            <div class="elfsight-app-d97b0a54-41c6-4c86-ab01-b8f6c71d9f03" data-elfsight-app-lazy></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Write a Review Button -->
+                    <div class="text-center mt-4">
+                        <a href="https://search.google.com/local/writereview?placeid=ChIJOSum2cXNPDIR7ehuvVzEY2U" target="_blank" class="btn btn-primary py-3 px-5">
+                            <i class="fab fa-google me-2"></i>Write a Google Review
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+
+    <!-- Appointment Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <p class="d-inline-block border rounded-pill py-1 px-4">Appointment</p>
+                    <h1 class="mb-4">Make An Appointment To Visit Our Doctor</h1>
+                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                    <div class="bg-light rounded d-flex align-items-center p-5 mb-4">
+                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style="width: 55px; height: 55px;">
+                            <i class="fa fa-phone-alt text-primary"></i>
+                        </div>
+                        <div class="ms-4">
+                            <p class="mb-2">Call Us Now</p>
+                            <h5 class="mb-0">+012 345 6789</h5>
+                        </div>
+                    </div>
+                    <div class="bg-light rounded d-flex align-items-center p-5">
+                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center rounded-circle bg-white" style="width: 55px; height: 55px;">
+                            <i class="fa fa-envelope-open text-primary"></i>
+                        </div>
+                        <div class="ms-4">
+                            <p class="mb-2">Mail Us Now</p>
+                            <h5 class="mb-0">info@example.com</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="bg-light rounded h-100 d-flex align-items-center p-5">
+                        <form id="appointmentForm">
+                            <div class="row g-3">
+                                <!-- 1. Service type selection -->
+                                <div class="col-12">
+                                    <label for="serviceType" class="form-label">Service Type</label>
+                                    <select id="serviceType" name="serviceType" class="form-select border-0" style="height: 55px;" required>
+                                        <option value="" disabled selected>Select Service</option>
+                                        <option value="general">General Consultation</option>
+                                        <option value="vaccination">Vaccination</option>
+                                        <option value="screening">Health Screening</option>
+                                        <option value="physiotherapy">Physiotherapy</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <!-- 2. Preferred date and time (optional) -->
+                                <div class="col-12 col-sm-6">
+                                    <label for="preferredDate" class="form-label">Preferred Date (optional)</label>
+                                    <input type="date" id="preferredDate" name="preferredDate" class="form-control border-0" style="height: 55px;">
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <label for="preferredTime" class="form-label">Preferred Time (optional)</label>
+                                    <input type="time" id="preferredTime" name="preferredTime" class="form-control border-0" style="height: 55px;">
+                                </div>
+                                <!-- 3. Patient details -->
+                                <div class="col-12 col-sm-6">
+                                    <label for="patientName" class="form-label">Name</label>
+                                    <input type="text" id="patientName" name="patientName" class="form-control border-0" placeholder="Your Name" style="height: 55px;" required>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <label for="patientPhone" class="form-label">Phone Number</label>
+                                    <input type="tel" id="patientPhone" name="patientPhone" class="form-control border-0" placeholder="Your Phone Number" style="height: 55px;" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="patientIC" class="form-label">IC or Email</label>
+                                    <input type="text" id="patientIC" name="patientIC" class="form-control border-0" placeholder="IC Number or Email" style="height: 55px;" required>
+                                </div>
+                                <!-- 4. Additional notes -->
+                                <div class="col-12">
+                                    <label for="additionalNotes" class="form-label">Additional Notes (e.g. symptoms, preferred doctor)</label>
+                                    <textarea id="additionalNotes" name="additionalNotes" class="form-control border-0" rows="3" placeholder="Describe your symptoms or preferred doctor"></textarea>
+                                </div>
+                                <!-- 5. Confirmation method -->
+                                <div class="col-12">
+                                    <div class="alert alert-info mt-2" role="alert">
+                                        We'll contact you within 24 hours to confirm your request.
+                                    </div>
+                                </div>
+                                <!-- 6. Terms notice -->
+                                <div class="col-12">
+                                    <div class="form-text mb-2">
+                                        <strong>Note:</strong> Walk-ins will be prioritized. This is a request, not a fixed appointment.
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary w-100 py-3">Submit Booking Request</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Appointment End -->
+
+
+  
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/counterup/counterup.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+
+    <!-- Add this just before the closing </body> tag -->
+    <script>
+        $(document).ready(function() {
+            // Prevent booking for past dates in appointment form
+            const dateInput = document.getElementById('preferredDate');
+            if (dateInput) {
+                // Set min attribute to today
+                const today = new Date();
+                const todayStr = today.toISOString().split('T')[0];
+                dateInput.setAttribute('min', todayStr);
+                
+                // Initial validation when page loads
+                if (dateInput.value) {
+                    const selectedDate = new Date(dateInput.value);
+                    today.setHours(0,0,0,0);
+                    if (selectedDate < today) {
+                        alert('You cannot book an appointment for a past date.');
+                        dateInput.value = todayStr; // Reset to today
+                    }
+                }
+                
+                // Validation when date changes
+                dateInput.addEventListener('change', function() {
+                    const selectedDate = new Date(this.value);
+                    const today = new Date();
+                    today.setHours(0,0,0,0);
+                    if (selectedDate < today) {
+                        alert('You cannot book an appointment for a past date.');
+                        this.value = ''; // Clear the field
+                    }
+                });
+                
+                // Also validate on input to catch direct typing
+                dateInput.addEventListener('input', function() {
+                    if (this.value) {
+                        const selectedDate = new Date(this.value);
+                        const today = new Date();
+                        today.setHours(0,0,0,0);
+                        if (selectedDate < today) {
+                            alert('You cannot book an appointment for a past date.');
+                            this.value = ''; // Clear the field
+                        }
+                    }
+                });
+            }
+            
+            // Prevent form submission if date is before today
+            const appointmentForm = document.getElementById('appointmentForm');
+            if (appointmentForm && dateInput) {
+                appointmentForm.addEventListener('submit', function(e) {
+                    if (dateInput.value) {
+                        const selectedDate = new Date(dateInput.value);
+                        const today = new Date();
+                        today.setHours(0,0,0,0);
+                        if (selectedDate < today) {
+                            e.preventDefault();
+                            alert('You cannot book an appointment for a past date.');
+                            dateInput.value = ''; // Clear the field
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

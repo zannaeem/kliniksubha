@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Login - Klinik Subha</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        body, html {
+            height: 100%;
+            background: #f8f9fa;
+        }
+        .login-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .login-card {
+            background: #fff;
+            border-radius: 1.5rem;
+            box-shadow: 0 0 32px 0 rgba(60,72,88,0.10);
+            padding: 2.5rem 2rem 2rem 2rem;
+            max-width: 400px;
+            width: 100%;
+            position: relative;
+        }
+        .login-logo {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .login-logo img {
+            height: 60px;
+        }
+        .login-title {
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            text-align: center;
+            color: #1C6839;
+        }
+        .login-subtext {
+            font-size: 1rem;
+            color: #6c757d;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .form-label {
+            font-weight: 500;
+            color: #333;
+        }
+        .form-control:focus {
+            border-color: #1C6839;
+            box-shadow: 0 0 0 0.2rem rgba(28, 104, 57, 0.25);
+        }
+        .login-btn {
+            background: #1C6839;
+            color: #fff;
+            border: none;
+            border-radius: 0.5rem;
+            width: 100%;
+            padding: 0.75rem 0;
+            font-weight: 500;
+            margin-top: 1rem;
+            transition: background-color 0.3s;
+        }
+        .login-btn:hover {
+            background: #154e2b;
+        }
+        .alert {
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-wrapper">
+        <div class="login-card">
+            <div class="login-logo">
+                <img src="img/services/services/logo.png" alt="Klinik Subha Logo">
+            </div>
+            <div class="login-title">Admin Login</div>
+            <div class="login-subtext">Please login to access the admin dashboard</div>
+            
+            <form id="loginForm">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                </div>
+                <div class="alert alert-danger" id="loginError" style="display:none;"></div>
+                <button type="submit" class="login-btn">Login to Dashboard</button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module">
+        import { signIn } from './js/auth.js';
+
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const errorDiv = document.getElementById('loginError');
+            
+            try {
+                errorDiv.style.display = 'none';
+                const loginButton = this.querySelector('button[type="submit"]');
+                loginButton.disabled = true;
+                loginButton.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Logging in...';
+
+                const { data, error } = await signIn(email, password);
+                
+                if (error) throw error;
+
+                // Redirect to the appropriate dashboard based on role
+                window.location.href = 'admin/dashboard.html';
+
+            } catch (error) {
+                errorDiv.textContent = error.message;
+                errorDiv.style.display = 'block';
+                const loginButton = this.querySelector('button[type="submit"]');
+                loginButton.disabled = false;
+                loginButton.textContent = 'Login to Dashboard';
+            }
+        });
+    </script>
+</body>
+</html> 
